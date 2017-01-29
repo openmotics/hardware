@@ -1,0 +1,32 @@
+#usage "<qt><b>toglay.ulp layernum"
+       "<p>Toggle visibility of the specified layer"
+       "<p>"
+       "<author>Author: Bill Westfield westfw@assorted</author></qt>"
+
+int mylayer;
+
+void display (string s) {
+   dlgMessageBox(s);
+   return;
+}
+
+if (argc != 2) { /* Should be ulp + arg */
+     string foo="";
+     sprintf(foo, "bad argc %d", argc);
+     display(foo);
+     exit("");
+}
+
+mylayer = strtod(argv[1]);
+
+if (board) board(B) {
+    B.layers(L) {
+        if (L.number == mylayer) {
+   if (L.visible) {
+       exit("display -" + L.name +";");
+   } else {
+       exit("display " + L.name+ ";");
+   }
+        }
+    }
+}
